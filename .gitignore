@@ -1,0 +1,25 @@
+
+# Logs and temp files
+**/*.log
+**/*.tmp
+**/*.bak
+**/*.swp
+**/.DS_Store
+**/Thumbs.db
+
+# General
+**/bin/
+**/obj/
+**/*.user
+**/*.suo
+
+# IDEs and editors
+**/.idea/
+**/.vs/
+**/.vscode/
+
+# env
+*.env
+
+# database
+/mysql_data
