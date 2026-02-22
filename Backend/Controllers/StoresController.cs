@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Backend.Context;
 using Backend.Models;
+using Backend.Services;
+using Backend.DTOs;
 
 namespace Backend.Controllers
 {
@@ -10,17 +12,19 @@ namespace Backend.Controllers
     public class StoresController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly StoreService _storeService;
 
-        public StoresController(AppDbContext context)
+        public StoresController(AppDbContext context, StoreService storeService)
         {
             _context = context;
+            _storeService = storeService;
         }
 
         // GET: api/Stores
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Store>>> GetStores()
+        public async Task<ActionResult<IEnumerable<StoreDto>>> GetStores(double latitude, double longitude)
         {
-            return await _context.Stores.ToListAsync();
+            return await _storeService.ToListByLocationAsync(latitude, longitude);
         }
 
         // GET: api/Stores/5

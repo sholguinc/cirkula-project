@@ -1,5 +1,6 @@
 using Backend.Context;
 using Backend.Data;
+using Backend.Services;
 using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,8 +22,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
 );
 
+// Add Services
+builder.Services.AddScoped<StoreService>();
+
 // Add services to the container.
 builder.Services.AddControllers();
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
