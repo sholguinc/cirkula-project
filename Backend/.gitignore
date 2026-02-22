@@ -1,0 +1,5 @@
+# General
+**/bin/
+**/obj/
+**/*.user
+**/*.suo

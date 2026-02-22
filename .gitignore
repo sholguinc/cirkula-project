@@ -7,12 +7,6 @@
 **/.DS_Store
 **/Thumbs.db
 
-# General
-**/bin/
-**/obj/
-**/*.user
-**/*.suo
-
 # IDEs and editors
 **/.idea/
 **/.vs/

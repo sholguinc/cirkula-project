@@ -34,6 +34,16 @@ services:
       - "5016:5016"
     depends_on:
       - mysql
+  
+  frontend:
+    build: ./Frontend
+    container_name: cirkula_frontend
+    environment:
+      EXPO_PUBLIC_API_URL: "http://backend:5016"
+    ports:
+      - "8081:8081"
+    depends_on:
+      - backend
 
 volumes:
   mysql_data:
