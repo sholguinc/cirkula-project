@@ -3,7 +3,7 @@ import Logger from "./LogService";
 
 import { Store } from "../models/Store";
 
-const API_URL = "http://192.168.1.10:5016";
+const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
 export default class StoreService extends ApiService {
   constructor() {
