@@ -1,21 +1,18 @@
 using Backend.Context;
 using Backend.Data;
 using Backend.Services;
-using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Env config
-Env.Load("../.env");
 
 // DB config
 var dbHost = Environment.GetEnvironmentVariable("MYSQL_HOST");
 var dbPort = Environment.GetEnvironmentVariable("MYSQL_PORT");
 var dbName = Environment.GetEnvironmentVariable("MYSQL_DATABASE");
+var dbUser = Environment.GetEnvironmentVariable("MYSQL_USER");
 var dbPassword = Environment.GetEnvironmentVariable("MYSQL_ROOT_PASSWORD");
 
-var connectionString = $"Server={dbHost};Port={dbPort};Database={dbName};User=root;Password={dbPassword};";
+var connectionString = $"Server={dbHost};Port={dbPort};Database={dbName};User={dbUser};Password={dbPassword};SslMode=none";
 
 // DB Context
 builder.Services.AddDbContext<AppDbContext>(options =>

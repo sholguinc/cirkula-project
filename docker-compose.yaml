@@ -1,0 +1,39 @@
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: cirkula_mysql_db
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+
+  adminer:
+    image: adminer
+    container_name: cirkula_adminer
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+
+  backend:
+    build: ./Backend
+    container_name: cirkula_backend
+    environment:
+      DOTNET_ENVIRONMENT: Development
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - "5016:5016"
+    depends_on:
+      - mysql
+
+volumes:
+  mysql_data:
