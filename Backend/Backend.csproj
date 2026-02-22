@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <None Include="Data\*.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

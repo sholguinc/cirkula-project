@@ -1,0 +1,26 @@
+[
+  {
+    "Name": "Cevicheria PuntaArena",
+    "BannerUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/70/4b/dd/ronda-marina-muy-rico.jpg?w=900&h=-1&s=1",
+    "Latitude": -12.0464,
+    "Longitude": -77.0428,
+    "OpenTime": "2024-01-01T08:00:00",
+    "CloseTime": "2024-01-01T18:00:00"
+  },
+  {
+    "Name": "Polleria San Antonio",
+    "BannerUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/eb/2f/41/polleria-ruben-con-mas.jpg?w=800&h=500&s=1",
+    "Latitude": -12.1211,
+    "Longitude": -77.03,
+    "OpenTime": "2024-01-01T09:00:00",
+    "CloseTime": "2024-01-01T19:00:00"
+  },
+  {
+    "Name": "Anticucheria Surquillo",
+    "BannerUrl": "https://natatouille.com/wp-content/uploads/2018/10/Anticuchables-papas-nativas-fritas_Marabunta-595x398.jpg",
+    "Latitude": -12.1392,
+    "Longitude": -76.999,
+    "OpenTime": "2024-01-01T10:00:00",
+    "CloseTime": "2024-01-01T20:00:00"
+  }
+]

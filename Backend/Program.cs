@@ -1,4 +1,5 @@
 using Backend.Context;
+using Backend.Data;
 using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,6 +31,16 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+// Define Seeed
+if (args.Contains("seed"))
+{
+    using var scope = app.Services.CreateScope();
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    Seeder.Run(context);
+    return;
+}
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
