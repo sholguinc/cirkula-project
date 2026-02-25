@@ -1,6 +1,7 @@
 using Backend.Context;
 using Backend.DTOs;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.InteropServices;
 
 namespace Backend.Services
 {
@@ -15,13 +16,12 @@ namespace Backend.Services
 
         public async Task<List<StoreDto>> ToListByLocationAsync(double latitude, double longitude)
         {
-            var now = DateTime.Now.TimeOfDay;
             var stores = await _context.Stores.ToListAsync();
 
             var storesInfo = stores.Select(s =>
             {
                 double distanceKm = GetDistanceInKm(latitude, longitude, s.Latitude, s.Longitude);
-                bool isOpen = now >= s.OpenTime.TimeOfDay && now <= s.CloseTime.TimeOfDay;
+                bool isOpen = IsBusinessOpen(s.OpenTime, s.CloseTime);
 
                 return new StoreDto
                 {
@@ -61,6 +61,21 @@ namespace Backend.Services
         private static double ToRadians(double angle)
         {
             return angle * Math.PI / 180.0;
+        }
+
+        public static bool IsBusinessOpen(TimeOnly openTime, TimeOnly closeTime)
+        {
+            var utcNowDateTime = DateTime.UtcNow;
+            var limaDateTime = utcNowDateTime.AddHours(-5);
+
+            TimeOnly now = TimeOnly.FromDateTime(limaDateTime);
+
+            if (openTime < closeTime)
+            {
+                return now >= openTime && now <= closeTime;
+            }
+
+            return now >= openTime || now <= closeTime;
         }
     }
 }
