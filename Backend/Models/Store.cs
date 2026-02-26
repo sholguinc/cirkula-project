@@ -21,9 +21,9 @@ namespace Backend.Models
         public double Longitude { get; set; }
 
         [Required]
-        public DateTime OpenTime { get; set; }
+        public TimeOnly OpenTime { get; set; }
 
         [Required]
-        public DateTime CloseTime { get; set; }
+        public TimeOnly CloseTime { get; set; }
     }
 }

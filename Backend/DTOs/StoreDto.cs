@@ -6,6 +6,7 @@ namespace Backend.DTOs
     {
         public double DistanceInKm { get; set; }
         public bool IsOpen { get; set; }
+
         public new string OpenTime { get; set; }
         public new string CloseTime { get; set; }
     }

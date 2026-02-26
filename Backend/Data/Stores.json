@@ -1,26 +1,50 @@
 [
   {
-    "Name": "Cevicheria PuntaArena",
+    "Name": "Cevicheria Punta Arena",
     "BannerUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/70/4b/dd/ronda-marina-muy-rico.jpg?w=900&h=-1&s=1",
     "Latitude": -12.0464,
     "Longitude": -77.0428,
-    "OpenTime": "2024-01-01T08:00:00",
-    "CloseTime": "2024-01-01T18:00:00"
+    "OpenTime": "08:00:00",
+    "CloseTime": "18:00:00"
   },
   {
     "Name": "Polleria San Antonio",
     "BannerUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/eb/2f/41/polleria-ruben-con-mas.jpg?w=800&h=500&s=1",
     "Latitude": -12.1211,
     "Longitude": -77.03,
-    "OpenTime": "2024-01-01T09:00:00",
-    "CloseTime": "2024-01-01T19:00:00"
+    "OpenTime": "09:00:00",
+    "CloseTime": "19:00:00"
   },
   {
     "Name": "Anticucheria Surquillo",
     "BannerUrl": "https://natatouille.com/wp-content/uploads/2018/10/Anticuchables-papas-nativas-fritas_Marabunta-595x398.jpg",
     "Latitude": -12.1392,
     "Longitude": -76.999,
-    "OpenTime": "2024-01-01T10:00:00",
-    "CloseTime": "2024-01-01T20:00:00"
+    "OpenTime": "10:00:00",
+    "CloseTime": "20:00:00"
+  },
+  {
+    "Name": "Fuente de Soda San Domingo",
+    "BannerUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/61/cd/97/20171127-105756-largejpg.jpg?w=800&h=500&s=1",
+    "Latitude": -12.1292,
+    "Longitude": -76.124,
+    "OpenTime": "08:00:00",
+    "CloseTime": "12:00:00"
+  },
+  {
+    "Name": "Restaurante Siete sopas",
+    "BannerUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/74/a4/13/caption.jpg?w=900&h=500&s=1",
+    "Latitude": -12.2292,
+    "Longitude": -76.134,
+    "OpenTime": "10:00:00",
+    "CloseTime": "00:00:00"
+  },
+  {
+    "Name": "Mercado de Frutas",
+    "BannerUrl": "https://traveler.marriott.com/es/wp-content/uploads/sites/2/2020/05/Alamy_EM0KJN_SanPedroMarket.jpg",
+    "Latitude": -11.1292,
+    "Longitude": -76.224,
+    "OpenTime": "06:00:00",
+    "CloseTime": "14:00:00"
   }
 ]

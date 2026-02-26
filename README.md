@@ -14,8 +14,9 @@
 
 ```dotenv
 # db config
+MYSQL_USER=
+MYSQL_PASSWORD=
 MYSQL_DATABASE=
-MYSQL_ROOT_PASSWORD=
 ```
 
 ### Offline Mode
