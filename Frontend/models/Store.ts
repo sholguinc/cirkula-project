@@ -6,6 +6,6 @@ export type Store = {
   longitude: number;
   openTime: string;
   closeTime: string;
-  distanceKm: number;
+  distanceInKm: number;
   isOpen: boolean;
 };

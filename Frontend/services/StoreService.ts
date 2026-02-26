@@ -2,6 +2,7 @@ import ApiService from "./ApiService";
 import Logger from "./LogService";
 
 import { Store } from "../models/Store";
+import { Coordinates } from "../models/Coordinates";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -10,7 +11,10 @@ export default class StoreService extends ApiService {
     super(API_URL);
   }
 
-  async getStores(latitude: number, longitude: number): Promise<Store[]> {
+  async getStores(coordinates: Coordinates): Promise<Store[]> {
+    const latitude = coordinates.latitude;
+    const longitude = coordinates.longitude;
+    
     Logger.debug(`[StoreService] Fetching stores near lat:${latitude}, lon:${longitude}`);
 
     try {

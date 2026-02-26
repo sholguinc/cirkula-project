@@ -1,35 +1,41 @@
-
+import { View, StyleSheet } from "react-native";
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import HomeScreen from './screens/HomeScreen';
-import StoreDetailScreen from "./screens/StoreDetailScreen"; 
+import { useFonts } from "expo-font";
+import {
+  Lato_400Regular,
+  Lato_700Bold,
+} from "@expo-google-fonts/lato";
 
-export type RootStackParamList = {
-  Home: undefined;
-  StoreDetail: { storeId: number };
-};
+import LoadingScreen from "./screens/LoadingScreen";
+import Navigation from "./Navigation";
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+import { Sizes } from "./styles/theme";
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Lato_400Regular,
+    Lato_700Bold,
+  });
+
+  if (!fontsLoaded) return null;
+
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen 
-            name="Home" 
-            component={HomeScreen} 
-            options={{ title: "Stores" }}
-          />
-          <Stack.Screen 
-            name="StoreDetail" 
-            component={StoreDetailScreen} 
-            options={{ title: "Store Detail" }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <View style={styles.appContainer}>
+        <LoadingScreen>
+          <Navigation/>
+        </LoadingScreen>
+      </View>
     </SafeAreaProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  appContainer: {
+    flex: 1,
+    width: '100%',
+    maxWidth: Sizes.maxWidth, 
+    backgroundColor: '#F9F9F9'
+  },
+});
